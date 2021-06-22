@@ -3,19 +3,27 @@ import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import Card from './components/Card'
 import SearchBox from './components/SearchBox'
+import { device } from "./data";
 import './App.css'
 
 const Wrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  justify-items: center;
+  align-items: center;
   grid-gap: 1em;
-  width: 70rem;
+
 `
 const Main = styled.main`
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  justify-items: center;
+  padding: 1rem;
+  text-align: center;
+
+  @media ${device.laptop} {
+    grid-template-columns: repeat(4, 1fr);
+    width: 70rem;
+    margin: 0 auto;
+  }
+
 `
 
 const App = () => {

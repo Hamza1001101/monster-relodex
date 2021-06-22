@@ -1,12 +1,13 @@
 
 import styled from 'styled-components'
-
+import { device } from '../data'
 
 const CardStyle = styled.div`
     transition: .2s;
     border-radius: 5px;
     width: 15rem; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
 `
 const Container = styled.div`
     padding: 2px;
@@ -14,7 +15,8 @@ const Container = styled.div`
 `
 const Avatar = styled.img`
     border-radius: 5px 5px 0 0;
-    width: 100%
+    width: 100%;
+    max-width: 100%; 
 `
 const Card = ({name, email, id, username}) => {
     return (

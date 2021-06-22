@@ -1,6 +1,6 @@
 
 import styled from 'styled-components'
-
+import { device } from '../data'
 
 const Input = styled.input`
     padding: 1.2rem;
@@ -8,10 +8,17 @@ const Input = styled.input`
     font-size: 1.1rem;
     cursor: pointer;
     outline:none;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     border-radius: 5px;
-    border: none
-`
+    border: none;
+    
+    @media ${device.mobileL} {
+        width: 15rem;
+        font-size: .9rem;
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+` 
 
 
 const SearchBox = ({onInputHandler}) => {
