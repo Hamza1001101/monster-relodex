@@ -1,6 +1,5 @@
 
 import styled from 'styled-components'
-import { device } from '../data'
 
 const CardStyle = styled.div`
     transition: .2s;
@@ -10,8 +9,9 @@ const CardStyle = styled.div`
     background: linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
 `
 const Container = styled.div`
-    padding: 2px;
+    padding: 2px 16px;
     text-align: center;
+    margin-bottom: 1rem
 `
 const Avatar = styled.img`
     border-radius: 5px 5px 0 0;
@@ -25,7 +25,7 @@ const Card = ({name, email, id, username}) => {
             <Avatar src={`https://robohash.org/${name}.png?size=200x200`}  alt='avatar' />
             <Container className="container">
                 <h4><b> {name} </b></h4>
-                <p> {username} <br />
+                <p style={{padding: '.4rem 0'}}> {username} <br />
                 {email}</p>
             </Container>
         </CardStyle>
