@@ -1,10 +1,9 @@
-
 import { useEffect, useState } from "react";
-import styled from 'styled-components'
-import Card from './components/Card'
-import SearchBox from './components/SearchBox'
+import styled from "styled-components";
+import Card from "./components/Card";
+import SearchBox from "./components/SearchBox";
 import { device } from "./data";
-import './App.css'
+import "./App.css";
 
 const Wrapper = styled.section`
   display: grid;
@@ -12,8 +11,7 @@ const Wrapper = styled.section`
   justify-items: center;
   align-items: center;
   grid-gap: 1em;
-
-`
+`;
 const Main = styled.main`
   padding: 1rem;
   text-align: center;
@@ -23,29 +21,29 @@ const Main = styled.main`
     width: 70rem;
     margin: 0 auto;
   }
-
-`
+`;
 
 const App = () => {
+  const [userList, setUserList] = useState([]);
+  const [userInput, setUserInput] = useState("");
 
-  const [userList, setUserList] = useState([])
-  const [userInput, setUserInput] = useState('')
-  
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(resp => resp.json())
-    .then(users => setUserList(users))
-  }, [])
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((resp) => resp.json())
+      .then((users) => setUserList(users));
+  }, []);
 
-  const onUserInputHandler = e => {
-    setUserInput(e.target.value)
-  }
+  const onUserInputHandler = (e) => {
+    setUserInput(e.target.value);
+  };
 
-  const renderList = userList.filter((user) => {
-    return user.name.toLowerCase().includes(userInput.toLowerCase())
-  }).map(({ id, name, username, email }) => {
-    return <Card key={id} name={name} username={username} email={email} />
-  })
+  const renderList = userList
+    .filter((user) => {
+      return user.name.toLowerCase().includes(userInput.toLowerCase());
+    })
+    .map(({ id, name, username, email }) => {
+      return <Card key={id} name={name} username={username} email={email} />;
+    });
 
   // const renderList = userList.map(({ id, name, username, email }) => {
   //   return <Card key={id} name={name} username={username} email={email} />
@@ -53,14 +51,9 @@ const App = () => {
 
   return (
     <Main>
-      <h1> Monster Relodox </h1> 
-      <SearchBox value={userInput} onInputHandler={onUserInputHandler}  />
-      <Wrapper>
-           {renderList}
-      </Wrapper>
-      
-      
-     
+      <h1> Monster Relodox </h1>
+      <SearchBox value={userInput} onInputHandler={onUserInputHandler} />
+      <Wrapper>{renderList}</Wrapper>
     </Main>
   );
 };
