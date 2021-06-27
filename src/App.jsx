@@ -45,10 +45,6 @@ const App = () => {
       return <Card key={id} name={name} username={username} email={email} />;
     });
 
-  // const renderList = userList.map(({ id, name, username, email }) => {
-  //   return <Card key={id} name={name} username={username} email={email} />
-  // })
-
   return (
     <Main>
       <h1> Monster Relodox </h1>
