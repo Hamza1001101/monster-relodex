@@ -5,7 +5,6 @@ import SearchBox from "./components/SearchBox";
 import { device } from "./data";
 import "./App.css";
 
-
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -27,7 +26,6 @@ const Wrapper = styled.section`
 const Main = styled.main`
   padding: 1rem;
   text-align: center;
-
   @media ${device.laptop} {
     grid-template-columns: repeat(4, 1fr);
     width: 70rem;
@@ -59,14 +57,13 @@ const App = () => {
 
   return (
     <>
-        <Main>
-      <h1> Monster Relodox </h1>
-      <SearchBox value={userInput} onInputHandler={onUserInputHandler} />
-      <Wrapper>{renderList}</Wrapper>
+      <Main>
+        <h1> Monster Relodox </h1>
+        <SearchBox value={userInput} onInputHandler={onUserInputHandler} />
+        <Wrapper>{renderList}</Wrapper>
       </Main>
       <GlobalStyle />
     </>
-
   );
 };
 
