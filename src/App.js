@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Card from "./components/Card";
 import SearchBox from "./components/SearchBox";
 import { device } from "./data";
-import "./App.css";
+
 
 const GlobalStyle = createGlobalStyle`
   * {
