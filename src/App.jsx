@@ -58,11 +58,15 @@ const App = () => {
     });
 
   return (
-    <Main>
+    <>
+        <Main>
       <h1> Monster Relodox </h1>
       <SearchBox value={userInput} onInputHandler={onUserInputHandler} />
       <Wrapper>{renderList}</Wrapper>
-    </Main>
+      </Main>
+      <GlobalStyle />
+    </>
+
   );
 };
 
