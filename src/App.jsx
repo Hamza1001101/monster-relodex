@@ -1,9 +1,21 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Card from "./components/Card";
 import SearchBox from "./components/SearchBox";
 import { device } from "./data";
 import "./App.css";
+
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #f9f9ff;
+  }
+`;
 
 const Wrapper = styled.section`
   display: grid;
